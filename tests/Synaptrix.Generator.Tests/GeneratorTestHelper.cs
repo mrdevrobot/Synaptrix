@@ -64,7 +64,9 @@ public static class GeneratorTestHelper
     /// emitted when compiling the user source together with the generator output. Use this
     /// when the assertion needs to verify that the generated code itself compiles.
     /// </summary>
-    public static (ImmutableArray<Diagnostic> CompilationDiagnostics, string[] GeneratedSources) RunGeneratorAndCompile(string source)
+    public static (ImmutableArray<Diagnostic> CompilationDiagnostics, string[] GeneratedSources) RunGeneratorAndCompile(
+        string source,
+        Dictionary<string, string>? globalOptions = null)
     {
         var syntaxTree = CSharpSyntaxTree.ParseText(source);
 
@@ -88,6 +90,12 @@ public static class GeneratorTestHelper
 
         var generator = new SynaptrixGenerator();
         CSharpGeneratorDriver driver = CSharpGeneratorDriver.Create(generator);
+
+        if (globalOptions != null && globalOptions.Any())
+        {
+            driver = (CSharpGeneratorDriver)driver.WithUpdatedAnalyzerConfigOptions(new TestAnalyzerConfigOptionsProvider(globalOptions));
+        }
+
         driver = (CSharpGeneratorDriver)driver.RunGeneratorsAndUpdateCompilation(compilation, out var outputCompilation, out _);
 
         var runResult = driver.GetRunResult();

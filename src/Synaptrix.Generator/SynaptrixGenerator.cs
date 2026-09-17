@@ -99,6 +99,19 @@ public class SynaptrixGenerator : IIncrementalGenerator
                 var mediatorCode = GenerateConcreteMediatorCode(generatedNamespace, handlers);
                 ctx.AddSource("SynaptrixGeneratedMediator.g.cs", SourceText.From(mediatorCode, Encoding.UTF8));
             }
+
+            // Opt-in, and only worth it in the composition root: the closed registrations cover every
+            // request this assembly can see, referenced assemblies included, so emitting them anywhere
+            // else would just repeat them.
+            if (options.GlobalOptions.TryGetValue("build_property.SynaptrixAotPipelineBehaviors", out var aotBehaviors)
+                && aotBehaviors.Equals("true", System.StringComparison.OrdinalIgnoreCase))
+            {
+                var aotCode = AotPipelineBehaviorEmitter.Generate(generatedNamespace, compilation);
+                if (aotCode is not null)
+                {
+                    ctx.AddSource("SynaptrixAotPipelineBehaviors.g.cs", SourceText.From(aotCode, Encoding.UTF8));
+                }
+            }
         });
     }
 

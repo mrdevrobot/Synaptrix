@@ -1,5 +1,6 @@
 ﻿<Project>
   <ItemGroup>
     <CompilerVisibleProperty Include="SynaptrixGeneratedMethodName" />
+    <CompilerVisibleProperty Include="SynaptrixAotPipelineBehaviors" />
   </ItemGroup>
 </Project>
