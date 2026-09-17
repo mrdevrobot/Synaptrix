@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.2.0"></a>
+## [3.2.0](https://www.github.com/mrdevrobot/Synaptrix/releases/tag/v3.2.0) (2026-09-17)
+
+### Features
+
+* **generator:** closed pipeline-behavior registrations for AOT hosts ([9874017](https://www.github.com/mrdevrobot/Synaptrix/commit/987401700f448dac276427faf303dc20f22537cd))
+
 <a name="3.1.3"></a>
 ## [3.1.3](https://www.github.com/mrdevrobot/Synaptrix/releases/tag/v3.1.3) (2026-08-07)
 

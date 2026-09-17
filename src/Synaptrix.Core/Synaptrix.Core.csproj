@@ -7,7 +7,7 @@
 
     <!-- NuGet Metadata -->
     <PackageId>Synaptrix.Core</PackageId>
-    <Version>3.1.3</Version>
+    <Version>3.2.0</Version>
     <Authors>Luca Fabbri</Authors>
     <Description>A lightweight and powerful .NET Mediator library implementing the Mediator pattern.</Description>
     <RepositoryUrl>https://github.com/mrdevrobot/Synaptrix</RepositoryUrl>

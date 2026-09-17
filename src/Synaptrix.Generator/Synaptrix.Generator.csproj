@@ -9,7 +9,7 @@
 
     <IsPackable>true</IsPackable>
     <PackageId>Synaptrix.Generator</PackageId>
-    <Version>3.1.3</Version>
+    <Version>3.2.0</Version>
     <Authors>Luca Fabbri</Authors>
     <Description>A C# Source Generator for automatic handler registration in Synaptrix.</Description>
     <RepositoryUrl>https://github.com/lucafabbri/Synaptrix</RepositoryUrl>
