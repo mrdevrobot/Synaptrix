@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.3.0"></a>
+## [3.3.0](https://www.github.com/mrdevrobot/Synaptrix/releases/tag/v3.3.0) (2026-11-12)
+
+### Features
+
+* target net10.0 and net11.0, drop end-of-life frameworks ([b385d3e](https://www.github.com/mrdevrobot/Synaptrix/commit/b385d3e9fe83c5c685d1b6c28f06db620f430c85))
+
 <a name="3.2.0"></a>
 ## [3.2.0](https://www.github.com/mrdevrobot/Synaptrix/releases/tag/v3.2.0) (2026-09-17)
 
