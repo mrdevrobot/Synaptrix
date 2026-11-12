@@ -44,7 +44,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: '11.0.x'
 
       # 3. Deriva la versione dal tag e rileva se è pre-release
       - name: Resolve version from tag
